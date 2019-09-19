@@ -29,5 +29,6 @@ public class TestController : MonoBehaviour
     {
         motor.Move(1.0f);
         motor.Rotate(1.0f);
+        gameObject.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
     }
 }

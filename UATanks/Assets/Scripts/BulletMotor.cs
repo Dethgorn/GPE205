@@ -29,7 +29,27 @@ public class BulletMotor : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider collision)
+    //private void OnTriggerEnter(Collider collision)
+    //{
+    //    if (collision.gameObject.tag == "Enemy")
+    //    {
+    //        // hurt the enemy and destroy the bullet
+    //        collision.gameObject.GetComponent<TankShooter>().Damage();
+    //        Destroy(gameObject);
+    //    }
+    //    else if (collision.gameObject.tag == "Player")
+    //    {
+    //        // hurt the player and destroy the bullet
+    //        collision.gameObject.GetComponent<TankShooter>().Damage();
+    //        Destroy(gameObject);
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {

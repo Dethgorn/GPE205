@@ -50,6 +50,7 @@ public class TankShooter : MonoBehaviour
 
     private void Die()
     {
+        
         data.score += data.pointValue;
         Destroy(gameObject);
     }
