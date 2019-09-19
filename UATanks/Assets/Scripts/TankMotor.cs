@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TankData))]
+
 public class TankMotor : MonoBehaviour
 {
+    private TankData data;
     private CharacterController charactercontroller;
     private Transform tf;
     private float rotateX;
@@ -12,6 +15,7 @@ public class TankMotor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        data = GetComponent<TankData>();
         charactercontroller = GetComponent<CharacterController>();
         tf = gameObject.GetComponent<Transform>();
     }
@@ -24,46 +28,29 @@ public class TankMotor : MonoBehaviour
 
     public void Move(float speed)
     {
-        // put the axis in a var
-        moveX = Input.GetAxis("Vertical");
-
-        if (moveX > 0.0f)
+        // check the axis for the value
+        if (speed < 0)
         {
-            // do the math for forward
-            Vector3 moveVector = tf.forward * speed * Time.deltaTime;
-            // simple move
-            charactercontroller.SimpleMove(moveVector);
+            speed = speed * data.reverseSpeed;
         }
-        else if (moveX < 0.0f)
+        else
         {
-            // do the math backward
-            Vector3 moveVector = tf.forward * speed * Time.deltaTime;
-            // move it
-            charactercontroller.SimpleMove(-moveVector);
+            speed = speed * data.forwardSpeed;
         }
-        
 
-        
+        // math the vector
+        Vector3 moveVector = tf.forward * speed * Time.deltaTime;
+
+        // simple move
+        charactercontroller.SimpleMove(moveVector);
+
     }
 
     public void Rotate(float speed)
     {
-        // put the axis in a var
-        rotateX = Input.GetAxis("Horizontal");
-        
-        if (rotateX > 0.0f)
-        {
-            // set it up to spin right
-             Vector3 rotateVector = tf.up * speed * Time.deltaTime;
-            // turn the tank
-            tf.Rotate(rotateVector, Space.Self);
-        }
-        else if (rotateX < 0.0f)
-        {
-            // set it up to spin left
-            Vector3 rotateVector = tf.up * speed * Time.deltaTime;
-            // turn the tank
-            tf.Rotate(-rotateVector, Space.Self);
-        }
+        // set up a vector
+        Vector3 rotateVector = tf.up * speed * Time.deltaTime * data.rotateSpeed;
+        // turn the tank
+        tf.Rotate(rotateVector, Space.Self);
     }
 }

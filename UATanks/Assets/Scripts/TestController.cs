@@ -27,7 +27,7 @@ public class TestController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        motor.Move(data.moveSpeed);
-        motor.Rotate(data.rotateSpeed);
+        motor.Move(1.0f);
+        motor.Rotate(1.0f);
     }
 }
