@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TankShooter : MonoBehaviour
 {
@@ -9,12 +10,15 @@ public class TankShooter : MonoBehaviour
     private Transform tf;
     private TankData data;
     private int delay;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         tf = gameObject.GetComponent<Transform>();
         data = gameObject.GetComponent<TankData>();
+        SetScore();
         
     }
 
@@ -40,6 +44,7 @@ public class TankShooter : MonoBehaviour
 
     public void Damage()
     {
+        // remove hp and if hp drops, call Die method
         data.health--;
 
         if (data.health < 0)
@@ -50,8 +55,14 @@ public class TankShooter : MonoBehaviour
 
     private void Die()
     {
-        
-        data.score += data.pointValue;
+        // remove the GO and add the point value to score
         Destroy(gameObject);
+        data.score += data.pointValue;
+        SetScore();
+    }
+
+    void SetScore()
+    {
+        scoreText.text = "Score: " + data.score.ToString();
     }
 }

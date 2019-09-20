@@ -14,6 +14,6 @@ public class TankData : MonoBehaviour
     public int health = 3;
 
     public int pointValue = 100;
-    public int score;
+    public int score = 0;
 
 }
