@@ -10,6 +10,7 @@ public class TankData : MonoBehaviour
     public float rotateSpeed = 180.0f;
 
     public int shotDelay = 5;
+    public int shotDamage = 1;
 
     public int health = 3;
 

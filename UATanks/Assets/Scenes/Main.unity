@@ -788,6 +788,11 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 2102815731}
+    - target: {fileID: 6181695617868001497, guid: 0d4fbbab824c6a14890ebbbc70d4b4ad,
+        type: 3}
+      propertyPath: shotDelay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d4fbbab824c6a14890ebbbc70d4b4ad, type: 3}
 --- !u!1001 &1123249070
@@ -1004,6 +1009,16 @@ PrefabInstance:
         type: 3}
       propertyPath: score
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181695617868001497, guid: b0cbddd57f5c85041b4bac0ebb60c1ef,
+        type: 3}
+      propertyPath: shotDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181695617868001497, guid: b0cbddd57f5c85041b4bac0ebb60c1ef,
+        type: 3}
+      propertyPath: shotDamage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5647591998000092847, guid: b0cbddd57f5c85041b4bac0ebb60c1ef,
         type: 3}

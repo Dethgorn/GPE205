@@ -148,7 +148,7 @@ MonoBehaviour:
   forwardSpeed: 300
   reverseSpeed: 200
   rotateSpeed: 180
-  shotDelay: 20
+  shotDelay: 3
   health: 3
   pointValue: 100
   score: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 6181695619638802273}
   bullet: {fileID: 5395993356287740338, guid: 7d20c2486d43f054785217e9bd562925, type: 3}
+  scoreText: {fileID: 0}
 --- !u!136 &8845184113616091153
 CapsuleCollider:
   m_ObjectHideFlags: 0

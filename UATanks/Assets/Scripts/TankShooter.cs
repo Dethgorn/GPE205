@@ -9,13 +9,13 @@ public class TankShooter : MonoBehaviour
     public GameObject bullet;
     private Transform tf;
     private TankData data;
-    private int delay;
+    private float lastShot;
     public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        lastShot = Time.time;
         tf = gameObject.GetComponent<Transform>();
         data = gameObject.GetComponent<TankData>();
         SetScore();
@@ -25,18 +25,18 @@ public class TankShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        delay++;
+        
     }
 
     public void Shoot()
     {
         
-        if ( delay > data.shotDelay)
+        if ( Time.time > lastShot + data.shotDelay)
         {
             // reset the delay and shoot
-            delay = 0;
-            Instantiate(bullet, shooter.transform.position, shooter.transform.rotation);
             
+            Instantiate(bullet, shooter.transform.position, shooter.transform.rotation);
+            lastShot = Time.time;
 
         }
         
@@ -45,9 +45,9 @@ public class TankShooter : MonoBehaviour
     public void Damage()
     {
         // remove hp and if hp drops, call Die method
-        data.health--;
+        data.health = data.health - data.shotDamage;
 
-        if (data.health < 0)
+        if (data.health <= 0)
         {
             Die();
         }
