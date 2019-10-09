@@ -65,4 +65,9 @@ public class TankShooter : MonoBehaviour
     {
         scoreText.text = "Score: " + data.score.ToString();
     }
+    // shooting stuff
+    // public Shell shell;
+    // public GameObject bullet;
+    // shell = bullet.getComponent<Shell>();
+    // shell.shooter = this.gameObject;
 }

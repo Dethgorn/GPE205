@@ -53,4 +53,20 @@ public class TankMotor : MonoBehaviour
         // turn the tank
         tf.Rotate(rotateVector, Space.Self);
     }
+
+    public bool RotateTowards(Vector3 target, float speed)
+    {
+        // find the target from current location
+        Vector3 vectorToTarget = target - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget);
+
+        // rotate if needed
+        if (targetRotation == transform.rotation)
+        {
+            return false;
+        }
+        transform.rotation =
+            Quaternion.RotateTowards(transform.rotation, targetRotation, data.rotateSpeed * Time.deltaTime);
+        return true;
+    }
 }
