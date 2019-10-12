@@ -12,7 +12,8 @@ public class TankData : MonoBehaviour
     public int shotDelay = 5;
     public int shotDamage = 1;
 
-    public int health = 3;
+    public float health = 3f;
+    public float maxHealth = 4f;
 
     public int pointValue = 100;
     public int score = 0;

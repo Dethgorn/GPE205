@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObsAvoidAIController : MonoBehaviour
 {
-    public float avoidanceTime = 2.0f;
+    public float avoidanceTime = 1.0f;
     public enum AttackMode { Chase };
     public AttackMode attackMode;
     public Transform target;
@@ -33,6 +33,7 @@ public class ObsAvoidAIController : MonoBehaviour
             if (avoidanceStage != 0)
             {
                 DoAvoidance();
+                
             }
             else
             {
@@ -43,24 +44,26 @@ public class ObsAvoidAIController : MonoBehaviour
 
     void DoAvoidance()
     {
-        if (avoidanceStage == 1)
+        switch (avoidanceStage)
         {
-            motor.Rotate(-1 * data.rotateSpeed);
+            case 1:
+                // turn left
+                motor.Rotate(-1.0f);
 
-            if (CanMove(data.forwardSpeed))
-            {
-                avoidanceStage = 2;
-
-                exitTime = avoidanceTime;
-            }
-            else if (avoidanceStage == 2)
-            {
+                if (CanMove(2.0f))
+                {
+                    avoidanceStage = 2;
+                    // set timer to go forward
+                    exitTime = avoidanceTime;
+                }
+                break;
+            case 2:
                 // if we can move forward, do so
-                if (CanMove(data.forwardSpeed))
+                if (CanMove(2.0f))
                 {
                     // Subtract from our timer and move
                     exitTime -= Time.deltaTime;
-                    motor.Move(data.forwardSpeed);
+                    motor.Move(1.0f);
 
                     // If we have moved long enough, return to chase mode
                     if (exitTime <= 0)
@@ -70,29 +73,31 @@ public class ObsAvoidAIController : MonoBehaviour
                 }
                 else
                 {
-                    // Otherwise, we can't move forward, so back to stage 1
                     avoidanceStage = 1;
                 }
-            }
+                break;
         }
     }
 
     void DoChase()
     {
+        // turn to target then chase
         motor.RotateTowards(target.position, data.rotateSpeed);
-        if (CanMove(data.forwardSpeed))
+        if (CanMove(2.0f))
         {
             motor.Move(1.0f);
         }
         else
         {
             avoidanceStage = 1;
+            
         }
     }
 
     bool CanMove(float speed)
     {
         RaycastHit hit;
+        // check for obstacles using player tag
         if (Physics.Raycast(tf.position, tf.forward, out hit, speed))
         {
             if (!hit.collider.CompareTag("Player"))
