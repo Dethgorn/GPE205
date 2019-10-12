@@ -35,7 +35,14 @@ public class ChaseFleeAIController : MonoBehaviour
     {
         if (attackMode == AttackMode.Chase)
         {
-            DoChase();
+            if (avoidanceStage != 0)
+            {
+                DoAvoidance();
+            }
+            else
+            {
+                DoChase();
+            }
             // check for changes
             if (data.health < (data.maxHealth * .5f))
             {
@@ -66,7 +73,15 @@ public class ChaseFleeAIController : MonoBehaviour
         }
         else if (attackMode == AttackMode.ChaseAndFire)
         {
-            DoChaseFire();
+            if (avoidanceStage != 0)
+            {
+                DoAvoidance();
+            }
+            else
+            {
+                DoChaseFire();
+            }
+            
             //check for changes
             if (data.health < (data.maxHealth * .5f))
             {
@@ -92,16 +107,30 @@ public class ChaseFleeAIController : MonoBehaviour
     {
         // Rotate towards the target
         motor.RotateTowards(target.position, data.rotateSpeed);
-        // Move forward
-        motor.Move(1f);
+        if (CanMove(2.0f))
+        {
+            motor.Move(1.0f);
+        }
+        else
+        {
+            avoidanceStage = 1;
+
+        }
     }
 
     void DoChaseFire()
     {
         // Rotate towards the target
         motor.RotateTowards(target.position, data.rotateSpeed);
-        // Move forward
-        motor.Move(1f);
+        if (CanMove(2.0f))
+        {
+            motor.Move(1.0f);
+        }
+        else
+        {
+            avoidanceStage = 1;
+
+        }
         gameObject.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
     }
 

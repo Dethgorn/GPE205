@@ -3633,7 +3633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8.6, y: -9.79}
+  m_AnchoredPosition: {x: 8.599976, y: -9.790009}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2102815731
@@ -3924,6 +3924,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 730552602}
+    - target: {fileID: 866333697168231959, guid: e3ef25f540564cb4687a1b5e0b7dde90,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ef25f540564cb4687a1b5e0b7dde90, type: 3}
 --- !u!1001 &2236877689513278266
@@ -4201,26 +4206,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1163213403}
     m_Modifications:
-    - target: {fileID: 5032620046078404669, guid: 4b18ef504a822434da2e4aaf0130e9c9,
-        type: 3}
-      propertyPath: aiSenseRadius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5032620046078404669, guid: 4b18ef504a822434da2e4aaf0130e9c9,
-        type: 3}
-      propertyPath: restingHealRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5032620046078404669, guid: 4b18ef504a822434da2e4aaf0130e9c9,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1228344442}
-    - target: {fileID: 5032620046078404669, guid: 4b18ef504a822434da2e4aaf0130e9c9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7297004511240423991, guid: 4b18ef504a822434da2e4aaf0130e9c9,
         type: 3}
       propertyPath: m_Name
@@ -4280,6 +4265,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032620046078404669, guid: 4b18ef504a822434da2e4aaf0130e9c9,
+        type: 3}
+      propertyPath: aiSenseRadius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032620046078404669, guid: 4b18ef504a822434da2e4aaf0130e9c9,
+        type: 3}
+      propertyPath: restingHealRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5032620046078404669, guid: 4b18ef504a822434da2e4aaf0130e9c9,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1228344442}
+    - target: {fileID: 5032620046078404669, guid: 4b18ef504a822434da2e4aaf0130e9c9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9146150480984353515, guid: 4b18ef504a822434da2e4aaf0130e9c9,
         type: 3}
