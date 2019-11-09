@@ -469,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5387210060553559646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44, y: -0.64, z: -29.4}
+  m_LocalPosition: {x: -44, y: 0, z: -29.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5387210060553454200}
@@ -512,6 +512,7 @@ MonoBehaviour:
   shotDelay: 5
   shotDamage: 1
   health: 3
+  maxHealth: 4
   pointValue: 100
   score: 0
 --- !u!114 &5387210060553591031
@@ -540,7 +541,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 5387210059099004748}
   bullet: {fileID: 5395993356287740338, guid: 03a99099801250842ac8be0bca62c1f9, type: 3}
-  scoreText: {fileID: 0}
 --- !u!136 &7334838212418506812
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5387210060553559646}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bf58cc3e0e98f844871348c8fbbfdd5, type: 3}
   m_Name: 

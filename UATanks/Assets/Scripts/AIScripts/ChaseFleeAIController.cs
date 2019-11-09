@@ -33,6 +33,12 @@ public class ChaseFleeAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // get a target
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         if (attackMode == AttackMode.Chase)
         {
             if (avoidanceStage != 0)

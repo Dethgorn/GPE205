@@ -9,7 +9,11 @@ public class GameManager : MonoBehaviour
     // hold the player and list of enemies
     public GameObject player;
     public List<GameObject> enemies;
-    
+
+    public List<GameObject> playerSpawnPoints = new List<GameObject>();
+    public List<GameObject> enemySpawnPoints = new List<GameObject>();
+    public List<GameObject> pickups = new List<GameObject>();
+
 
     // Runs before any Start() functions run
     void Awake()
@@ -25,5 +29,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // TODO: turn this into a method? 
+        // pull in the spawnpoints for players and enemies into lists
+        foreach (GameObject pSpawn in GameObject.FindGameObjectsWithTag("Respawn"))
+        {
+            playerSpawnPoints.Add(pSpawn);
+        }
+        foreach (GameObject eSpawn in GameObject.FindGameObjectsWithTag("EnemyRespawn"))
+        {
+            enemySpawnPoints.Add(eSpawn);
+        }
+        foreach (GameObject pickup in GameObject.FindGameObjectsWithTag("Pickup"))
+        {
+            pickups.Add(pickup);
+        }
+    }
+
+    //void FillList(string tag)
+    //{
+    //    foreach (GameObject thingy in GameObject.FindGameObjectsWithTag(tag))
+    //    {
+    //        pickups.Add(thingy);
+    //    }
+    //}
 
 }

@@ -10,7 +10,7 @@ public class TankShooter : MonoBehaviour
     private Transform tf;
     private TankData data;
     private float lastShot;
-    public Text scoreText;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +18,6 @@ public class TankShooter : MonoBehaviour
         lastShot = Time.time;
         tf = gameObject.GetComponent<Transform>();
         data = gameObject.GetComponent<TankData>();
-        SetScore();
-        
     }
 
     // Update is called once per frame
@@ -58,13 +56,9 @@ public class TankShooter : MonoBehaviour
         // remove the GO and add the point value to score
         Destroy(gameObject);
         data.score += data.pointValue;
-        SetScore();
     }
 
-    void SetScore()
-    {
-        scoreText.text = "Score: " + data.score.ToString();
-    }
+    
     // shooting stuff
     // public Shell shell;
     // public GameObject bullet;

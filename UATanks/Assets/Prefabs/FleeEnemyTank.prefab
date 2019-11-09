@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 9146150480984353515}
   - component: {fileID: 5354086778841498709}
   - component: {fileID: 5032620046078404669}
+  - component: {fileID: 1364333325911952433}
   m_Layer: 10
   m_Name: FleeEnemyTank
   m_TagString: Enemy
@@ -290,7 +291,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 7297004512741280549}
   bullet: {fileID: 5395993356287740338, guid: 03a99099801250842ac8be0bca62c1f9, type: 3}
-  scoreText: {fileID: 0}
 --- !u!136 &5354086778841498709
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -319,10 +319,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackMode: 0
   aiSenseRadius: 10
+  avoidanceTime: 1
   fleeDistance: 1
   restingHealRate: 1
   stateEnterTime: 0
-  target: {fileID: 6181695617867868755, guid: b0cbddd57f5c85041b4bac0ebb60c1ef, type: 3}
+  target: {fileID: 0}
+--- !u!114 &1364333325911952433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7297004511240423991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b735213eb742fa46a75afe5d75981c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerups: []
 --- !u!1 &7297004511240423993
 GameObject:
   m_ObjectHideFlags: 0

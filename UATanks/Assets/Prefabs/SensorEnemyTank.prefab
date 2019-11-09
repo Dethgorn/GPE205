@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 4784391908989049019}
   - component: {fileID: 8558455566541403653}
   - component: {fileID: 866333697168231959}
+  - component: {fileID: 148137162939668364}
   m_Layer: 10
   m_Name: SensorEnemyTank
   m_TagString: Enemy
@@ -320,7 +321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 6470580306884786549}
   bullet: {fileID: 5395993356287740338, guid: 03a99099801250842ac8be0bca62c1f9, type: 3}
-  scoreText: {fileID: 0}
 --- !u!136 &8558455566541403653
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -342,20 +342,34 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6470580307248822375}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d301650d499e5d540bee3ff9cbaf0c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   aiSense: 0
   aiSenseRadius: 10
+  avoidanceTime: 1
   closeEnough: 1
-  target: {fileID: 0}
+  target: {fileID: 6181695617867868755, guid: b0cbddd57f5c85041b4bac0ebb60c1ef, type: 3}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &148137162939668364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6470580307248822375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b735213eb742fa46a75afe5d75981c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerups: []
 --- !u!1 &6470580307248822377
 GameObject:
   m_ObjectHideFlags: 0
