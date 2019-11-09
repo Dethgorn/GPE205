@@ -18,7 +18,7 @@ public class MapGenerator : MonoBehaviour
     private Room[,] grid;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (mapOTDay)
         {

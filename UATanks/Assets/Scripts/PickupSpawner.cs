@@ -30,6 +30,7 @@ public class PickupSpawner : MonoBehaviour
                 // Spawn it and set the next time
                 spawnedPickup = Instantiate(pickupPrefab, tf.position, Quaternion.identity) as GameObject;
                 nextSpawnTime = Time.time + spawnDelay;
+                GameManager.instance.pickups.Add(spawnedPickup);
             }
         }
         else

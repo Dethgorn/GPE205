@@ -16,6 +16,7 @@ public class Pickup : MonoBehaviour
         {
             // Add the powerup
             powCon.Add(powerup);
+            GameManager.instance.pickups.Remove(gameObject);
 
             // Destroy this pickup
             Destroy(gameObject);

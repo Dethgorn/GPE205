@@ -41,10 +41,6 @@ public class GameManager : MonoBehaviour
         {
             enemySpawnPoints.Add(eSpawn);
         }
-        foreach (GameObject pickup in GameObject.FindGameObjectsWithTag("Pickup"))
-        {
-            pickups.Add(pickup);
-        }
     }
 
     //void FillList(string tag)
