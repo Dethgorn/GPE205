@@ -9,11 +9,12 @@ public class TankData : MonoBehaviour
     public float reverseSpeed = 200.0f;
     public float rotateSpeed = 180.0f;
 
-    public int shotDelay = 5;
+    public int shotDelay = 3;
     public int shotDamage = 1;
 
     public float health = 3f;
     public float maxHealth = 4f;
+    public int lives = 3;
 
     public int pointValue = 100;
     public int score = 0;

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 4b5d9286ce78a834585111d92dd20d8e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shooting: {fileID: 8300000, guid: 0ea2704644e6ae545b118bd68f284bab, type: 3}
+  - shotHit: {fileID: 8300000, guid: 1d4a428021e374647906d61a49f7bdf9, type: 3}
+  - tankDeath: {fileID: 8300000, guid: 27f8afcc5344aff44b7d3390e783267f, type: 3}
+  - pickingUp: {fileID: 8300000, guid: 4401b7849c29c8b42bc771f7c8a0bac8, type: 3}
+  - buttonPush: {fileID: 8300000, guid: f2051fe3c658cf4408ba79fcddc73a9b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,9 +7,19 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     // hold the player and list of enemies
+    public bool multiplayer;
+    public float musicVol;
+    public float sfxVol;
     public GameObject player;
+    public GameObject player1;
+    public GameObject player2;
     public List<GameObject> enemies;
 
+    public int p1Life;
+    public int p1Score;
+    public int p2Life;
+    public int p2Score;
+    
     public List<GameObject> playerSpawnPoints = new List<GameObject>();
     public List<GameObject> enemySpawnPoints = new List<GameObject>();
     public List<GameObject> pickups = new List<GameObject>();
@@ -21,6 +31,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -28,27 +39,5 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
-    {
-        // TODO: turn this into a method? 
-        // pull in the spawnpoints for players and enemies into lists
-        foreach (GameObject pSpawn in GameObject.FindGameObjectsWithTag("Respawn"))
-        {
-            playerSpawnPoints.Add(pSpawn);
-        }
-        foreach (GameObject eSpawn in GameObject.FindGameObjectsWithTag("EnemyRespawn"))
-        {
-            enemySpawnPoints.Add(eSpawn);
-        }
-    }
-
-    //void FillList(string tag)
-    //{
-    //    foreach (GameObject thingy in GameObject.FindGameObjectsWithTag(tag))
-    //    {
-    //        pickups.Add(thingy);
-    //    }
-    //}
 
 }

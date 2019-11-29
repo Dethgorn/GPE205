@@ -29,15 +29,16 @@ public class BulletMotor : MonoBehaviour
         
     }
 
-    //private void OnTriggerEnter(Collider collision)
+    //private void OnCollisionEnter(Collision collision)
     //{
+    //    AudioSource.PlayClipAtPoint(AudioController.instance.shotHit, AudioController.instance.transform.position);
     //    if (collision.gameObject.tag == "Enemy")
     //    {
     //        // hurt the enemy and destroy the bullet
     //        collision.gameObject.GetComponent<TankShooter>().Damage();
     //        Destroy(gameObject);
     //    }
-    //    else if (collision.gameObject.tag == "Player")
+    //    else if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
     //    {
     //        // hurt the player and destroy the bullet
     //        collision.gameObject.GetComponent<TankShooter>().Damage();
@@ -48,19 +49,19 @@ public class BulletMotor : MonoBehaviour
     //        Destroy(gameObject);
     //    }
     //}
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Enemy")
+        AudioSource.PlayClipAtPoint(AudioController.instance.shotHit, AudioController.instance.transform.position);
+        if (other.gameObject.tag == "Enemy")
         {
             // hurt the enemy and destroy the bullet
-            collision.gameObject.GetComponent<TankShooter>().Damage();
+            other.gameObject.GetComponent<TankShooter>().Damage();
             Destroy(gameObject);
         }
-        else if (collision.gameObject.tag == "Player")
+        else if (other.gameObject.tag == "Player" || other.gameObject.tag == "Player2")
         {
             // hurt the player and destroy the bullet
-            collision.gameObject.GetComponent<TankShooter>().Damage();
+            other.gameObject.GetComponent<TankShooter>().Damage();
             Destroy(gameObject);
         }
         else

@@ -28,7 +28,17 @@ public class MapGenerator : MonoBehaviour
         {
             mapSeed = DateToInt(DateTime.Now);
         }
+        // make the map
         GenerateGrid();
+        // populate gamemanager lists
+        foreach (GameObject pSpawn in GameObject.FindGameObjectsWithTag("Respawn"))
+        {
+            GameManager.instance.playerSpawnPoints.Add(pSpawn);
+        }
+        foreach (GameObject eSpawn in GameObject.FindGameObjectsWithTag("EnemyRespawn"))
+        {
+            GameManager.instance.enemySpawnPoints.Add(eSpawn);
+        }
     }
 
     public int DateToInt(DateTime dateToUse)
