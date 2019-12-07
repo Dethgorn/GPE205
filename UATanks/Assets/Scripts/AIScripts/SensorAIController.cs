@@ -11,6 +11,8 @@ public class SensorAIController : MonoBehaviour
     public float closeEnough = 1.0f;
     public Transform target;
     public Transform[] waypoints;
+    private Transform targCheck;
+    private Transform targCheck2;
 
     private int avoidanceStage = 0;
     private int currentWaypoint = 0;
@@ -30,6 +32,31 @@ public class SensorAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.multiplayer)
+        {
+            // get a target
+            if (target == null)
+            {
+                targCheck = GameObject.FindGameObjectWithTag("Player").transform;
+                targCheck2 = GameObject.FindGameObjectWithTag("Player2").transform;
+                if (Vector3.Distance(targCheck.position, tf.position) < Vector3.Distance(targCheck2.position, tf.position))
+                {
+                    target = GameObject.FindGameObjectWithTag("Player").transform;
+                }
+                else
+                {
+                    target = GameObject.FindGameObjectWithTag("Player2").transform;
+                }
+            }
+        }
+        else
+        {
+            // get a target
+            if (target == null)
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+            }
+        }
         if (aiSense == AISense.Patrol)
         {
             if (avoidanceStage != 0)

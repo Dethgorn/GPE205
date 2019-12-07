@@ -23,7 +23,6 @@ public class WaypointAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
 
         if (motor.RotateTowards(waypoints[currentWaypoint].position, data.rotateSpeed))
         {
@@ -32,6 +31,7 @@ public class WaypointAIController : MonoBehaviour
         else
         {
             motor.Move(1.0f);
+            gameObject.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
         }
         // it would be better to store transform in a var in Start!
         if (Vector3.SqrMagnitude(waypoints[currentWaypoint].position - transform.position) <= (closeEnough * closeEnough))

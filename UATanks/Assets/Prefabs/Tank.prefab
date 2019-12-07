@@ -92,7 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187a12534ada4bd42916162e0f19b5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
   lifeText: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
@@ -327,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  scoreTextp2: {fileID: 0}
 --- !u!114 &2102815731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,10 +512,11 @@ MonoBehaviour:
   forwardSpeed: 300
   reverseSpeed: 200
   rotateSpeed: 180
-  shotDelay: 1
+  shotDelay: 0
   shotDamage: 3
   health: 3
   maxHealth: 4
+  lives: 3
   pointValue: -100
   score: 0
 --- !u!114 &6181695617868001498
@@ -543,6 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: 1
+  fireButton: Fire1
 --- !u!114 &5647591998000092847
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class ObsAvoidAIController : MonoBehaviour
     public enum AttackMode { Chase };
     public AttackMode attackMode;
     public Transform target;
+    private Transform targCheck;
+    private Transform targCheck2;
 
     private TankMotor motor;
     private TankData data;
@@ -28,10 +30,30 @@ public class ObsAvoidAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // get a target
-        if (target == null)
+        if (GameManager.instance.multiplayer)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            // get a target
+            if (target == null)
+            {
+                targCheck = GameObject.FindGameObjectWithTag("Player").transform;
+                targCheck2 = GameObject.FindGameObjectWithTag("Player2").transform;
+                if (Vector3.Distance(targCheck.position, tf.position) < Vector3.Distance(targCheck2.position, tf.position))
+                {
+                    target = GameObject.FindGameObjectWithTag("Player").transform;
+                }
+                else
+                {
+                    target = GameObject.FindGameObjectWithTag("Player2").transform;
+                }
+            }
+        }
+        else
+        {
+            // get a target
+            if (target == null)
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+            }
         }
 
         if (attackMode == AttackMode.Chase)

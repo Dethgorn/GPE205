@@ -74,9 +74,10 @@ MonoBehaviour:
   reverseSpeed: 200
   rotateSpeed: 180
   shotDelay: 1
-  shotDamage: 3
+  shotDamage: 4
   health: 3
   maxHealth: 4
+  lives: 3
   pointValue: -100
   score: 0
 --- !u!114 &12305227789799368
@@ -104,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input: 1
+  fireButton: Fire1
 --- !u!114 &1982210679858571709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,7 +599,7 @@ GameObject:
   - component: {fileID: 880952726619930638}
   - component: {fileID: 2068027718734234789}
   m_Layer: 5
-  m_Name: Life
+  m_Name: LifeP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,7 +621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.1, y: -2.8}
+  m_AnchoredPosition: {x: -7.100006, y: -2.800003}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &2029955467069293583
@@ -676,7 +678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187a12534ada4bd42916162e0f19b5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
   lifeText: {fileID: 880952726619930638}
 --- !u!1 &1943914420612831641
 GameObject:
@@ -865,7 +866,7 @@ GameObject:
   - component: {fileID: 312118842739695260}
   - component: {fileID: 3198393042100093406}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ScoreP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,7 +911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a99969a1a0e2e49931485863ecf687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 3198393042100093406}
+  scoreTextp2: {fileID: 0}
 --- !u!114 &3198393042100093406
 MonoBehaviour:
   m_ObjectHideFlags: 0

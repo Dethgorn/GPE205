@@ -44,6 +44,8 @@ public class LifeController : MonoBehaviour
             {
                 if (GameManager.instance.p1Life < 0 && GameManager.instance.p2Life < 0)
                 {
+                    PlayerPrefs.SetInt("ScoreP1", GameManager.instance.p1Score);
+                    
                     SceneManager.LoadScene(2);
                 }
             }
@@ -51,19 +53,11 @@ public class LifeController : MonoBehaviour
             {
                 if (GameManager.instance.p1Life < 0)
                 {
+                    PlayerPrefs.SetInt("ScoreP1", GameManager.instance.p1Score);
                     SceneManager.LoadScene(2);
                 }
             }
         }
-        //else if (taghold == "Player" && GameManager.instance.multiplayer)
-        //{
-        //    GameManager.instance.p1Life -= 1;
-        //    // check for game over
-        //    if (GameManager.instance.p1Life < 0 && GameManager.instance.p2Life < 0)
-        //    {
-        //        SceneManager.LoadScene(2);
-        //    }
-        //}
         else if (taghold == "Player2" && GameManager.instance.multiplayer)
         {
             GameManager.instance.p2Life -= 1;
@@ -71,6 +65,7 @@ public class LifeController : MonoBehaviour
             // check for game over
             if (GameManager.instance.p1Life < 0 && GameManager.instance.p2Life < 0)
             {
+                PlayerPrefs.SetInt("ScoreP2", GameManager.instance.p2Score);
                 SceneManager.LoadScene(2);
             }
         }

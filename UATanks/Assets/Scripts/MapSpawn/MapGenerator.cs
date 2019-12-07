@@ -8,7 +8,7 @@ public class MapGenerator : MonoBehaviour
     public int rows;
     public int cols;
     public GameObject[] gridPrefabs;
-    public bool mapRandom;
+    public bool mapRandom = true;
     public int mapSeed;
     public bool mapOTDay;
     
@@ -20,6 +20,7 @@ public class MapGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        mapOTDay = GameManager.instance.mapOfTheDay;
         if (mapOTDay)
         {
             mapSeed = DateToInt(DateTime.Now.Date);

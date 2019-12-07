@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     // hold the player and list of enemies
     public bool multiplayer;
+    public bool mapOfTheDay;
     public float musicVol;
     public float sfxVol;
     public GameObject player;

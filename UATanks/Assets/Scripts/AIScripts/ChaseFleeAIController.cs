@@ -14,6 +14,8 @@ public class ChaseFleeAIController : MonoBehaviour
     public float restingHealRate;
     public float stateEnterTime;
     public Transform target;
+    private Transform targCheck;
+    private Transform targCheck2;
 
     private int avoidanceStage = 0;
     private float exitTime;
@@ -33,11 +35,33 @@ public class ChaseFleeAIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // get a target
-        if (target == null)
+        if (GameManager.instance.multiplayer)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+            // get a target
+            if (target == null)
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+                targCheck = GameObject.FindGameObjectWithTag("Player").transform;
+                targCheck2 = GameObject.FindGameObjectWithTag("Player2").transform;
+                if (Vector3.Distance(targCheck.position, tf.position) < Vector3.Distance(targCheck2.position, tf.position))
+                {
+                    target = GameObject.FindGameObjectWithTag("Player").transform;
+                }
+                else
+                {
+                    target = GameObject.FindGameObjectWithTag("Player2").transform;
+                }
+            }
         }
+        else
+        {
+            // get a target
+            if (target == null)
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform;
+            }
+        }
+        
 
         if (attackMode == AttackMode.Chase)
         {

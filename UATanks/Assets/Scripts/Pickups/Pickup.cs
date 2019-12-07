@@ -14,7 +14,7 @@ public class Pickup : MonoBehaviour
         // If the other object has a PowerupController
         if (powCon != null)
         {
-            AudioSource.PlayClipAtPoint(AudioController.instance.pickingUp, AudioController.instance.transform.position);
+            AudioSource.PlayClipAtPoint(AudioController.instance.pickingUp, AudioController.instance.transform.position, GameManager.instance.sfxVol);
             // Add the powerup
             powCon.Add(powerup);
             GameManager.instance.pickups.Remove(gameObject);

@@ -6,9 +6,11 @@ public class InputController : MonoBehaviour
 {
     public enum InputScheme { arrowKey, WASD };
     public InputScheme input = InputScheme.WASD;
+    public string fireButton = "Fire1";
 
     private float horizontalInput;
     private float verticalInput;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,7 @@ public class InputController : MonoBehaviour
         gameObject.SendMessage("Move", verticalInput, SendMessageOptions.DontRequireReceiver);
         gameObject.SendMessage("Rotate", horizontalInput, SendMessageOptions.DontRequireReceiver);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown(fireButton))
         {
             
             gameObject.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
