@@ -8,14 +8,19 @@ public class Options : MonoBehaviour
 {
     //public AudioMixer audioSFX;
     public AudioSource menuMusic;
-    
 
+    private void Awake()
+    {
+        
+    }
 
     private void Start()
     {
-        menuMusic.volume = 
         GameManager.instance.sfxVol = PlayerPrefs.GetFloat("SFXVolume");
         GameManager.instance.musicVol = PlayerPrefs.GetFloat("MusicVolume");
+        menuMusic.volume = GameManager.instance.musicVol;
+
+
     }
 
     public void LowMusicVolume()
