@@ -6,14 +6,8 @@ using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
-    //public AudioMixer audioSFX;
     public AudioSource menuMusic;
-
-    private void Awake()
-    {
-        
-    }
-
+   
     private void Start()
     {
         GameManager.instance.sfxVol = PlayerPrefs.GetFloat("SFXVolume");
@@ -38,7 +32,6 @@ public class Options : MonoBehaviour
     public void LowSFXVolume()
     {
         GameManager.instance.sfxVol -= .1f;
-        
     }
 
     public void UpSFXVolume()
@@ -56,17 +49,11 @@ public class Options : MonoBehaviour
         GameManager.instance.mapOfTheDay = choice.isOn;
     }
     
-
+    // save it when back button is clicked
     public void SavePrefs()
     {
         PlayerPrefs.SetFloat("SFXVolume", GameManager.instance.sfxVol);
         PlayerPrefs.SetFloat("MusicVolume", GameManager.instance.musicVol);
         PlayerPrefs.Save();
     }
-
-
-    //public void SetSFXVolume(float volume)
-    //{
-    //    audioSFX.SetFloat("volume", volume);
-    //}
 }

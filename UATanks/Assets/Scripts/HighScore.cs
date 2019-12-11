@@ -20,7 +20,7 @@ public class HighScore : MonoBehaviour
 
         AddHighScoreEntry(GameManager.instance.p1Score);
 
-        //conver to json
+        //convert to json
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
@@ -39,6 +39,7 @@ public class HighScore : MonoBehaviour
             }
         }
 
+        // loop through and create UI elements for the scores
         highscoreEntryTransformList = new List<Transform>();
         highscores.highscoreEntryList.GetRange(0, 10);
         foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)

@@ -30,12 +30,6 @@ public class TankShooter : MonoBehaviour
         shell = bullet.GetComponent<BulletData>();
         
     }
-   
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void Shoot()
     {
@@ -78,6 +72,7 @@ public class TankShooter : MonoBehaviour
 
     private void Die()
     {
+        // send the points to the right place
         if (whoFired == "Player")
         {
             ScoreController.ScoreUpdate(data.pointValue, whoFired);
@@ -86,48 +81,31 @@ public class TankShooter : MonoBehaviour
         {
             ScoreController.ScoreUpdate(data.pointValue, whoFired);
         }
+        //boom
         AudioSource.PlayClipAtPoint(AudioController.instance.tankDeath, AudioController.instance.transform.position, GameManager.instance.sfxVol);
         // check for player tags
-        
         if (gameObject.tag == "Player" || gameObject.tag == "Player2")
         {
-            
             // remove a life
             LifeController.LifeLost();
             // use logic to find singleplayer or multiplayer and which player
             // respawn the player
             if(GameManager.instance.multiplayer == false && gameObject.tag == "Player" && GameManager.instance.p1Life >= 0)
             {
+                
                 PlayerSpawner.Spawner("Player", 0);
             }
             else if(GameManager.instance.multiplayer == true && gameObject.tag == "Player" && GameManager.instance.p1Life >= 0)
             {
+                
                 PlayerSpawner.Spawner("Player", 1);
             }
             else if (GameManager.instance.multiplayer == true && gameObject.tag == "Player2" && GameManager.instance.p2Life >= 0)
             {
+                
                 PlayerSpawner.Spawner("Player2", 2);
             }
-
         }
         Destroy(gameObject);
-    }
-
-    // using UnityEngine.SceneManagement;
-    //void GameOver()
-    //{
-
-    //    gameOver = true;
-    //    StartCoroutine(LoadGameOver());
-    //}
-
-    //IEnumerator LoadGameOver()
-    //{
-
-    //    yield return new WaitForSeconds(3f);
-    //    SceneManager.LoadScene(2);
-    //}
-
-
-    
+    }   
 }

@@ -58,8 +58,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a99969a1a0e2e49931485863ecf687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  scoreTextp2: {fileID: 0}
 --- !u!114 &4915869781964568979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,7 +719,7 @@ MonoBehaviour:
   forwardSpeed: 300
   reverseSpeed: 200
   rotateSpeed: 180
-  shotDelay: 1
+  shotDelay: 0
   shotDamage: 3
   health: 3
   maxHealth: 4

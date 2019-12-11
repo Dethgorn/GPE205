@@ -15,14 +15,4 @@ public class ButtonSound : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(AudioController.instance.buttonRelease, AudioController.instance.transform.position, GameManager.instance.sfxVol);
     }
-
-    public class Event : EventTrigger
-    {
-        public override void OnPointerDown(PointerEventData eventData)
-        {
-            //base.OnPointerDown(eventData);
-            Debug.Log("Clickity clack");
-        }
-    }
-    
 }

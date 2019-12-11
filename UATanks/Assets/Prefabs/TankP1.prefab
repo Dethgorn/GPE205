@@ -73,7 +73,7 @@ MonoBehaviour:
   forwardSpeed: 300
   reverseSpeed: 200
   rotateSpeed: 180
-  shotDelay: 1
+  shotDelay: 0
   shotDamage: 4
   health: 3
   maxHealth: 4
@@ -863,8 +863,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4494253072887298496}
   - component: {fileID: 8267053851213349044}
-  - component: {fileID: 312118842739695260}
   - component: {fileID: 3198393042100093406}
+  - component: {fileID: 2994223236488209959}
   m_Layer: 5
   m_Name: ScoreP1
   m_TagString: Untagged
@@ -899,20 +899,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7472648141171823477}
   m_CullTransparentMesh: 0
---- !u!114 &312118842739695260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7472648141171823477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12a99969a1a0e2e49931485863ecf687, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 3198393042100093406}
-  scoreTextp2: {fileID: 0}
 --- !u!114 &3198393042100093406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,3 +933,16 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Score:'
+--- !u!114 &2994223236488209959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7472648141171823477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12a99969a1a0e2e49931485863ecf687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 0}

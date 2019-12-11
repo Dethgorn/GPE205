@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    // hold the player and list of enemies
+    
     public bool multiplayer;
     public bool mapOfTheDay;
     public float musicVol;
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
     public List<GameObject> enemies;
-
+    [Space(10)]
     public int p1Life;
     public int p1Score;
     public int p2Life;
